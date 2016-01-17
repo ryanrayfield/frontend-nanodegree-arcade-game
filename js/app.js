@@ -1,30 +1,85 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x,y,loc) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    this.x=50;
+    this.y=75;
+    this.loc=100;
+    //console.log(loc);
+    //console.log(this);
+   
+    
 };
+ 
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
+    this.x+=this.loc*dt;
+    if (this.x>505) {
+        this.x=-200;            
+    }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    
 };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+       ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function(x,y){
+    this.sprite = 'images/char-boy.png';
+    this.x = 205;
+    this.y = 415;
+    //console.log(this)
+}
+Player.prototype.update = function(){
+    this.loc++;
+}
 
+Player.prototype.render = function(x,y) {
+    
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function (key){
+    console.log(key); 
+   
+    if (this.key = 'up'){
+        this.y = this.y-35;
+    }
+    else if (this.key = 'down'){
+        this.y = this.y+35;
+    }
+    else if (this.key = 'left'){
+        this.x = this.x+35;
+    }
+    else  (this.key = 'right');{
+        this.x = this.x-35;
+    };
+};
+
+var allEnemies =  [];
+var dracula = new Enemy(3);
+allEnemies.push(dracula);
+//dracula.render();
+//dracula.update();
+var player= new Player(5)
+//player.render(10,10);
+//player.update();
+//console.log(dracula);
+//console.log(allEnemies);
+console.log(allEnemies[0]);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
