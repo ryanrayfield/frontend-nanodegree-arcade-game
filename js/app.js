@@ -1,11 +1,11 @@
 // Enemies our player must avoid
-var Enemy = function(x, y, loc) {
+var Enemy = function(x, y, loc, spritePath) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = spritePath;
     this.x = x;
     this.y = y;
     this.loc = loc;
@@ -90,9 +90,9 @@ Player.prototype.handleInput = function(key) {
 
 
 var allEnemies = [];
-var dracula = new Enemy(50, 75, 300);
+var dracula = new Enemy(50, 75, 300,'images/enemy-bug.png');
 allEnemies.push(dracula);
-var devil = new Enemy(-100, 120, 100);
+var devil = new Enemy(-100, 120, 100,'images/dragon.png');
 allEnemies.push(devil);
 var player = new Player(205, 415);
 
