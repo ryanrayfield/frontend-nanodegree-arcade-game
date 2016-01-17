@@ -23,6 +23,7 @@ Enemy.prototype.update = function(dt) {
     if (this.x>505) {
         this.x=-200;            
     }
+    checkEnemyPosition();
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -79,7 +80,7 @@ Player.prototype.handleInput = function (key){
         this.y = 415;
     }
        
- // collision(); 
+ 
 }
 
 //var collision = function (){
@@ -93,9 +94,26 @@ var dracula = new Enemy(50,75,300);
 allEnemies.push(dracula);
 var devil = new Enemy(-100,120,100);
 allEnemies.push(devil);
-//dracula.render();
-//dracula.update();
 var player= new Player(205,415);
+
+var checkEnemyPosition = function(i){
+for (i=0; i < allEnemies.length; i++){
+    if ((allEnemies[i].x >= (-50+player.x) && allEnemies[i].x <= (50+player.x)) && (allEnemies[i].y >= (-50+player.y) && allEnemies[i].y <= (50+player.y))){
+        resetPlayer();
+    } //else {
+      //  console.log('no');
+   // }
+   // console.log(allEnemies[i].x);
+    //console.log(player.x + ', '+ player.y);
+}
+}
+var resetPlayer = function (){
+    player.x=205;
+    player.y=415;
+}
+
+
+
 
 //player.render(10,10);
 //player.update();
