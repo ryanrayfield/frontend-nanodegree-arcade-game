@@ -6,9 +6,9 @@ var Enemy = function(x,y,loc) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.x=50;
-    this.y=75;
-    this.loc=100;
+    this.x=x;
+    this.y=y;
+    this.loc=loc;
     //console.log(loc);
     //console.log(this);
    
@@ -39,12 +39,12 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 var Player = function(x,y){
     this.sprite = 'images/char-boy.png';
-    this.x = 205;
-    this.y = 415;
-    //console.log(this)
+    this.x = x;
+    this.y = y;
+   // console.log(this)
 }
 Player.prototype.update = function(){
-    this.loc++;
+   // this.loc++;
 }
 
 Player.prototype.render = function(x,y) {
@@ -53,33 +53,55 @@ Player.prototype.render = function(x,y) {
 };
 
 Player.prototype.handleInput = function (key){
-    console.log(key); 
-   
-    if (this.key = 'up'){
+
+    if (key === 'up'){
         this.y = this.y-35;
-    }
-    else if (this.key = 'down'){
+        // console.log(key); 
+    } else if (key === 'down'){
         this.y = this.y+35;
-    }
-    else if (this.key = 'left'){
-        this.x = this.x+35;
-    }
-    else  (this.key = 'right');{
+        // console.log(key); 
+    } else if (key === 'left'){
         this.x = this.x-35;
-    };
-};
+        // console.log(key); 
+    } else if (key === 'right'){
+        this.x = this.x+35;
+        // console.log(key); 
+       
+    }
+    
+    if (this.x>420) {
+        this.x = 420;
+    } else if (this.x<0){
+        this.x = 0;
+    } else if (this.y<50){
+        this.y = 415;
+    } else if  (this.y>415){
+        this.y = 415;
+    }
+       
+ // collision(); 
+}
+
+//var collision = function (){
+//    if (allEnemies[1].x=player.x)
+//    console.log('hit');
+//    }
+    
 
 var allEnemies =  [];
-var dracula = new Enemy(3);
+var dracula = new Enemy(50,75,300);
 allEnemies.push(dracula);
+var devil = new Enemy(-100,120,100);
+allEnemies.push(devil);
 //dracula.render();
 //dracula.update();
-var player= new Player(5)
+var player= new Player(205,415);
+
 //player.render(10,10);
 //player.update();
 //console.log(dracula);
 //console.log(allEnemies);
-console.log(allEnemies[0]);
+//console.log(allEnemies[0]);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
