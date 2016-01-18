@@ -65,8 +65,8 @@ Player.prototype.handleInput = function(key) {
 };
 
 Player.prototype.resetPlayer = function() {
-    player.x = 205;
-    player.y = 415;
+    this.x = 205;
+    this.y = 415;
 };
 
 var allEnemies = [];
