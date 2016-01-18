@@ -64,7 +64,7 @@ Player.prototype.handleInput = function(key) {
  }
 };
 
-Plater.prototype.resetPlayer = function() {
+Player.prototype.resetPlayer = function() {
  player.x = 205;
  player.y = 415;
 };
