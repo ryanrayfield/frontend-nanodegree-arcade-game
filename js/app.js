@@ -43,10 +43,10 @@ var Player = function(x, y) {
     this.x = x;
     this.y = y;
     // console.log(this)
-}
+};
 Player.prototype.update = function() {
     // this.loc++;
-}
+};
 
 Player.prototype.render = function(x, y) {
 
@@ -81,7 +81,7 @@ Player.prototype.handleInput = function(key) {
     }
 
 
-}
+};
 
 //var collision = function (){
 //    if (allEnemies[1].x=player.x)
@@ -109,11 +109,11 @@ var checkEnemyPosition = function(i) {
         // console.log(allEnemies[i].x);
         //console.log(player.x + ', '+ player.y);
     }
-}
+};
 var resetPlayer = function() {
     player.x = 205;
     player.y = 415;
-}
+};
 
 
 
