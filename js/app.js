@@ -92,8 +92,11 @@ Player.prototype.handleInput = function(key) {
 var allEnemies = [];
 var dracula = new Enemy(50, 75, 300,'images/enemy-bug.png');
 allEnemies.push(dracula);
-var devil = new Enemy(-100, 120, 100,'images/dragon.png');
+var devil = new Enemy(-100, 189, 100,'images/dragon.png');
 allEnemies.push(devil);
+
+
+
 var player = new Player(205, 415);
 
 var checkEnemyPosition = function(i) {
