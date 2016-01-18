@@ -1,3 +1,5 @@
+var gameBoundryRight = 505;
+
 var Enemy = function(x, y, loc, spritePath) {
 
  this.sprite = spritePath;
@@ -9,7 +11,7 @@ var Enemy = function(x, y, loc, spritePath) {
 
 Enemy.prototype.update = function(dt) {
  this.x += this.loc * dt;
- if (this.x > 505) {
+ if (this.x > gameBoundryRight) {
   this.x = -200;
  }
  checkEnemyPosition();
@@ -62,6 +64,10 @@ Player.prototype.handleInput = function(key) {
  }
 };
 
+Plater.prototype.resetPlayer = function() {
+ player.x = 205;
+ player.y = 415;
+};
 
 var allEnemies = [];
 var dracula = new Enemy(50, 75, 300, 'images/enemy-bug.png');
@@ -80,10 +86,7 @@ var checkEnemyPosition = function(i) {
   }
  }
 };
-var resetPlayer = function() {
- player.x = 205;
- player.y = 415;
-};
+
 
 document.addEventListener('keyup', function(e) {
  var allowedKeys = {
