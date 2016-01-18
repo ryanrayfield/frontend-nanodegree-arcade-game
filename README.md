@@ -1,6 +1,12 @@
-frontend-nanodegree-arcade-game
+# The Classic Arcade Game - with a twist
 ===============================
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+Get ready for the most exciting game ever to have been invented. You will start on the fields of asvaban an dodge giant insects and dragons on you path to the waters edge. Evade them and you will win and get to play again!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How to begin
+1. Open a webserver using python 'http.server' command from the root folder of the repo on your local drive
+
+### How to play
+Use your directional keys on your keyboard to move your hero. Left, Right, Up, and Down arrows have the corresponding response.
+
+Thanks and enjoy!
