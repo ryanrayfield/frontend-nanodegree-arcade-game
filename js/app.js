@@ -82,7 +82,7 @@ var player = new Player(205, 415);
 var checkEnemyPosition = function(i) {
  for (i = 0; i < allEnemies.length; i++) {
   if ((allEnemies[i].x >= (-50 + player.x) && allEnemies[i].x <= (50 + player.x)) && (allEnemies[i].y >= (-50 + player.y) && allEnemies[i].y <= (50 + player.y))) {
-   resetPlayer();
+   Player.prototype.resetPlayer();
   }
  }
 };
