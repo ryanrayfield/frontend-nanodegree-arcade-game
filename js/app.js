@@ -14,7 +14,7 @@ Enemy.prototype.update = function(dt) {
     if (this.x > gameBoundryRight) {
         this.x = -200;
     }
-    checkEnemyPosition();
+    this.checkEnemyPosition();
 
 
 };
@@ -42,13 +42,13 @@ Player.prototype.render = function(x, y) {
 Player.prototype.handleInput = function(key) {
 
     if (key === 'up') {
-        this.y = this.y - 35;
+        this.y -= 35;
     } else if (key === 'down') {
-        this.y = this.y + 35;
+        this.y += 35;
     } else if (key === 'left') {
-        this.x = this.x - 35;
+        this.x -= 35;
     } else if (key === 'right') {
-        this.x = this.x + 35;
+        this.x += 35;
 
 
     }
@@ -79,10 +79,10 @@ allEnemies.push(devil);
 
 var player = new Player(205, 415);
 
-var checkEnemyPosition = function(i) {
+Enemy.prototype.checkEnemyPosition = function(i) {
     for (i = 0; i < allEnemies.length; i++) {
         if ((allEnemies[i].x >= (-50 + player.x) && allEnemies[i].x <= (50 + player.x)) && (allEnemies[i].y >= (-50 + player.y) && allEnemies[i].y <= (50 + player.y))) {
-            Player.prototype.resetPlayer();
+            player.resetPlayer();
         }
     }
 };
